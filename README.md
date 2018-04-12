@@ -6,10 +6,10 @@ This repository contains:
 	- an .m file that solves the problem, and
 	- a .pdf report of the solution to the problem.
 	
-This project was made using MATLAB, Google Docs, and Notepad++. Please enjoy.
+This project was made using MATLAB and documented in Google Docs. Please enjoy.
 
 Hammad Imam.
 
-Undergraduate, Aerospace Engineering, Iowa State University.
+Undergraduate, Aerospace Engineering, Iowa State University. 
 
 April 12th, 2018.
