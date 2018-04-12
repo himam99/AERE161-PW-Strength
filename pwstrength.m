@@ -4,24 +4,19 @@
 
 clear, clc; %clear the console and all variables
 
-%request password from user
-pw = input('Enter password: ', 's'); 
+pw = input('Enter password: ', 's'); %request password from user
 
-%initiate pw strength to 0
-ps = 0;
+ps = 0; %initiate pw strength to 0
+pws = strcat("The password '", pw, "' is "); %initial return string
 
-%initial return string, containing all but results
-pws = strcat("The password '", pw, "' is ");
-
-
-if ~(isempty(regexp(pw,'[a-z]'))) %if there are letters
-    ps = ps+1;                    %increase strength by 1
+if ~(isempty(regexp(pw,'[a-zA-Z]')))    %if there are letters
+    ps = ps+1;                          %increase strength by 1
 end
-if ~(isempty(regexp(pw,'[0-9]'))) %if there are numbers
-    ps = ps+1;                    %increase strength by 1
+if ~(isempty(regexp(pw,'[0-9]')))       %if there are numbers
+    ps = ps+1;                          %increase strength by 1
 end
-if length(ps) >= 8                %if it's longer than 8 characters
-    ps = ps+2;                    %increase strength by 2
+if length(pw) >= 8                      %if it's longer than 8 characters
+    ps = ps+2;                          %increase strength by 2
 end
 
 %append strength level to pws
@@ -33,11 +28,10 @@ elseif(ps == 2)
     pws = strcat(pws, 'weak.');
 elseif(ps == 3)
     pws = strcat(pws, 'strong.');
-elseif(ps == 3)
+elseif(ps == 4)
     pws = strcat(pws, 'very strong.');
 else
-    pws = strcat(pws, ' very very strong.');
+    pws = strcat(pws, 'very very strong.');
 end
 
 disp(pws);
-
