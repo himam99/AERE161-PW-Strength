@@ -1,0 +1,42 @@
+%Hammad Imam // himam@iastate.edu
+%Password Strength Indicator
+%AerE 161 
+
+clear, clc;
+
+a = input('Enter password: ');
+
+disp(pwstrength(a));
+
+
+function [pws] = P(pw)
+
+ps = 0;
+pws = strcat("The password '", pw, "' is ");
+
+if ~(isempty(regexp(pw,'[a-c]')))
+    ps = ps+1;
+end
+if ~(isempty(regexp(pw,'[0-9]')))
+    ps = ps+1;
+end
+if length(ps) >= 8
+    ps = ps+2;
+end
+
+if(ps <= 0)
+    pws = strcat(pws, ' extremely weak.');
+elseif(ps == 1)
+    pws = strcat(pws, ' very weak.');
+elseif(ps == 2)
+    pws = strcat(pws, ' weak.');
+elseif(ps == 3)
+    pws = strcat(pws, ' strong.');
+elseif(ps == 3)
+    pws = strcat(pws, ' very strong.');
+else
+    pws = strcat(pws, ' very very strong.');
+end
+
+end
+
